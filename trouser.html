@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="x-icon" href="images\Screenshot (199).png">
+  <title>KCN PRODUCTS</title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- fontawesome cdn link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+    crossorigin="anonymous">
+    <!--some css parts-->
+    
+    
+    <style>
+  .btn-container {  /* Add a class to the parent element */
+    text-align: center;
+  }
+</style>
+
+<style>
+  .card-title {
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
+<style>
+  .custom-toggler-icon{
+    color: green; /* Change color to your desired color */
+  }
+  
+</style>
+
+</head>
+<body>
+<!--navbar-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"><img src="images\KCN PRODUCTS Logo - Original with Transparent Background - 5000x5000.png" class="img" style="width: 150px; height: 50px;"></a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="custom-toggler-icon">☰</span> <!-- Custom icon, you can replace with any other icon or text -->
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+        </li>
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Product items
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="gents.html">Gents Products</a></li>
+            <li><a class="dropdown-item" href="ladies.html">Ladies Products</a></li>
+            <li><a class="dropdown-item" href="babies.html">Babies Products</a></li>
+           
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutus.html">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contactus.html">Contact us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Log In</a>
+        </li>
+       
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="find" onkeyup="search()">
+        <button class="btn btn-outline-success" type="submit" >Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<br>
+
+<!-- javascript -->
+<script type="text/javascript">
+function search() {
+let filter = document.getElementById('find').value.toUpperCase();
+let item = document.querySelectorAll('.product-card');
+let l = document.getElementsByTagName('h5');
+for(var i = 0;i<=l.length;i++){
+let a=item[i].getElementsByTagName('h5')[0];
+let value=a.innerHTML || a.innerText || a.textContent;
+if(value.toUpperCase().indexOf(filter) > -1) {
+item[i].style.display="";
+}
+else
+{
+item[i].style.display="none";
+}
+}
+}
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="blackshirt.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.small-container {
+    max-width: 1000px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.single-product {
+    margin-top: 80px;
+}
+
+.small-img-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.col-2 img {
+    max-width: 100%;
+    padding: 50px 0;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+.single-product .col-2 img {
+    padding: 0;
+}
+
+.single-product .col-2 {
+    padding: 20px;
+}
+
+.col-2 {
+    flex-basis: 50%;
+    min-width: 450px;
+}
+
+.col-2 h1 {
+    font-size: 50px;
+    line-height: 60px;
+    margin: 50px 0;
+}
+
+.single-product select {
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.single-product h4 {
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.single-product input {
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 1px solid #ff523b;
+}
+
+input:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #555;
+}
+
+.single-product .fa {
+    color: #ff523b;
+    margin-left: 10px;
+}
+
+p {
+    color: #555;
+}
+
+.btn1{
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+
+.btn1:hover {
+    background: #563434;
+}
+
+</style>
+
+
+<title>Products details Enjoy Dude</title>
+</head>
+
+<body>
+<div class="small-container single-product">
+    <div class="row">
+        <div class="col-2">
+            <img src="images/OI (1).jpeg" width="100%" id="ProductImg">
+
+
+            <div class="small-img-row">
+          
+                <div class="small-img-col">
+                    <img src="images/OI (1).jpeg" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/OI (2).jpeg" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/OI (3).jpeg" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col"> 
+                    <img src="images/OI.jpeg" width="100%" class="small-img">
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+          
+            <h1 style="font-weight: bold;">Trousers by enjoy dude.</h1>
+            <h3>Product  Details <i class="fa fa-indent"></i></h3>
+            <br>
+            <p>kvsgkvchdkjvhkhkjh jjhvfjhbvbhjvbjhvfhjhhvj<br>
+            hascgg,fhhjhfdhjfhkhfkjhf.fjkf,h</p><br>
+            <p style="font-weight: bold; color: green;">kvsgkvchdkjvhkhkjh jjhvfjhbvbhjvbjhvfhjhhvj<br>
+   hascgg,fhhjhfdhjfhkhfkjhf.fjkf,h</p>
+
+            <br>          
+            <p style="font-weight: bold; font-size: larger;">Copy the product id - 8176</p>
+
+             <br>   
+            </select>
+            <h4>RS.1000.00</h4>
+
+            <a href="" class="btn1">Buy Now</a>
+          
+        </div>
+    </div>
+</div>
+
+<script>
+    var ProductImg = document.getElementById("ProductImg");
+    var SmallImg = document.getElementsByClassName("small-img");
+
+    SmallImg[0].onclick = function() {
+        ProductImg.src = SmallImg[0].src;
+    }
+
+    SmallImg[1].onclick = function() {
+        ProductImg.src = SmallImg[1].src;
+    }
+
+    SmallImg[2].onclick = function() {
+        ProductImg.src = SmallImg[2].src;
+    }
+
+    SmallImg[3].onclick = function() {
+        ProductImg.src = SmallImg[3].src;
+    }
+</script>
+
+</body>
+</html>
+<br><br><br><br><br><br>
+
+
+<html>
+    <body>
+
+<!-- footer-->
+ 
+<footer class="footer">
+    <div class="container">
+    <div class="footer-row">
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="contactus.html">Contact us</a></li>
+            <li><a href="login.html">Log In</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="contactus.html">Contact us</a></li>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">order status</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Online Shop</h4>
+          <ul>
+            <li><a href="gents.html">Gents products</a></li>
+            <li><a href="ladies.html">Ladies Products</a></li>
+            <li><a href="babies.html">Babies products</a></li>
+            <li><a href="index.html">Other Products</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+           
+          </div>
+         
+        </div>
+      </div>
+     </div>
+     <div style="text-align: center; color: gray;">
+      <p>&copy; 2024 by <a href="#"  style="color: gray;">KCN PRODUCTS</a>. All Rights Reserved.</p>
+      <!-- must add website name at here [ <a href="#">KCN PRODUCTS ] instead of KCN PRODUCTS</a> -->
+      </div>
+</footer>
+<!--script link---->
+
+  <script>
+    function showSidebar(){
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display='flex'
+
+    }
+    function hideSidebar(){
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display='none'
+
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+
+
+<?php
+include_once('connect.php');
+
+if(isset($_POST['signin']))
+{
+    $name=$_POST['name'];
+    $username=$_POST['username'];
+    $password=md5($_POST['password']);
+
+    $sql   ="INSERT INTO `tbl_user`(`name`, `username`, `password`) VALUES ('$name','$username','$password')";
+    $result=mysqli_query($conn,$sql);
+    if($result){ 
+    header('location:index.php');
+    echo"<script>alert('New User Register Success');</script>";
+    }else{
+        die(mysqli_error($conn)) ;
+    }
+   
+}
